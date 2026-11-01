@@ -1,4 +1,4 @@
-package demo;
+package tests;
 
 import m1graphs2026.Graph;
 import m1graphs2026.Node;
