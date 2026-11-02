@@ -32,8 +32,6 @@ public class Node implements Comparable<Node> {
     public Node(Graph graph) {
         this(graph != null ? (graph.isEmpty() ? 1 : graph.largestNodeId() + 1) : 1, null, graph);
     }
-    //——————
-
     /**
      * Constructs a node with an identifier and an owning graph holder.
      *
@@ -44,8 +42,6 @@ public class Node implements Comparable<Node> {
     public Node(int id, Graph graph) {
         this(id, null, graph);
     }
-    //——————
-
     /**
      * Constructs a node with an identifier, an optional name, and an owning graph holder.
      *
@@ -62,8 +58,6 @@ public class Node implements Comparable<Node> {
         this.name = name;
         this.graph = graph;
     }
-    //——————
-
     /**
      * Gets the unique identifier of this node.
      *
@@ -72,8 +66,6 @@ public class Node implements Comparable<Node> {
     public int getId() {
         return id;
     }
-    //——————
-
     /**
      * Gets the graph holder of this node.
      *
@@ -82,8 +74,6 @@ public class Node implements Comparable<Node> {
     public Graph getGraph() {
         return graph;
     }
-    //——————
-
     /**
      * Gets the optional name of this node.
      *
@@ -92,8 +82,6 @@ public class Node implements Comparable<Node> {
     public String getName() {
         return name;
     }
-    //——————
-
     /**
      * Returns a list without duplicates of the successors (or neighbors in the undirected case)
      * of this node.
@@ -103,8 +91,6 @@ public class Node implements Comparable<Node> {
     public List<Node> getSuccessors() {
         return graph.getSuccessors(this);
     }
-    //——————
-
     /**
      * Returns a list with possible duplicates of the successors (or neighbors in the undirected case)
      * of this node.
@@ -114,8 +100,6 @@ public class Node implements Comparable<Node> {
     public List<Node> getSuccessorsMulti() {
         return graph.getSuccessorsMulti(this);
     }
-    //——————
-
     /**
      * Tests whether node {@code u} is adjacent to this node.
      *
@@ -125,8 +109,6 @@ public class Node implements Comparable<Node> {
     public boolean adjacent(Node u) {
         return graph.adjacent(this, u);
     }
-    //——————
-
     /**
      * Tests whether the node with ID {@code nodeId} is adjacent to this node.
      *
@@ -136,8 +118,6 @@ public class Node implements Comparable<Node> {
     public boolean adjacent(int nodeId) {
         return graph.adjacent(this.id, nodeId);
     }
-    //——————
-
     /**
      * Computes the in-degree of this node, counting all incoming edges including parallel edges.
      *
@@ -146,8 +126,6 @@ public class Node implements Comparable<Node> {
     public int inDegree() {
         return graph.inDegree(this);
     }
-    //——————
-
     /**
      * Computes the out-degree of this node, counting all outgoing edges including parallel edges.
      *
@@ -156,8 +134,6 @@ public class Node implements Comparable<Node> {
     public int outDegree() {
         return graph.outDegree(this);
     }
-    //——————
-
     /**
      * Computes the total degree of this node.
      * For directed graphs, this is the sum of in-degree and out-degree.
@@ -167,8 +143,6 @@ public class Node implements Comparable<Node> {
     public int degree() {
         return inDegree() + outDegree();
     }
-    //——————
-
     /**
      * Returns a list of all edges leaving this node.
      *
@@ -177,8 +151,6 @@ public class Node implements Comparable<Node> {
     public List<Edge> getOutEdges() {
         return graph.getOutEdges(this);
     }
-    //——————
-
     /**
      * Returns a list of all edges entering this node.
      *
@@ -187,8 +159,6 @@ public class Node implements Comparable<Node> {
     public List<Edge> getInEdges() {
         return graph.getInEdges(this);
     }
-    //——————
-
     /**
      * Returns a list of all edges incident to this node (union of out-edges and in-edges).
      *
@@ -197,8 +167,6 @@ public class Node implements Comparable<Node> {
     public List<Edge> getIncidentEdges() {
         return graph.getIncidentEdges(this);
     }
-    //——————
-
     /**
      * Returns a list of all edges going from this node to node {@code u}.
      *
@@ -208,8 +176,6 @@ public class Node implements Comparable<Node> {
     public List<Edge> getEdgesTo(Node u) {
         return graph.getEdges(this, u);
     }
-    //——————
-
     /**
      * Compares this node with another node for order by increasing ID.
      *
@@ -222,8 +188,6 @@ public class Node implements Comparable<Node> {
         Objects.requireNonNull(other, "other node");
         return Integer.compare(this.id, other.id);
     }
-    //——————
-
     /**
      * Indicates whether some other object is equal to this node.
      * Two nodes are equal if they share the same ID and belong to the same graph instance.
@@ -241,8 +205,6 @@ public class Node implements Comparable<Node> {
         }
         return id == other.id && graph == other.graph;
     }
-    //——————
-
     /**
      * Computes a hash code consistent with {@link #equals(Object)}.
      *
@@ -252,8 +214,6 @@ public class Node implements Comparable<Node> {
     public int hashCode() {
         return 31 * Integer.hashCode(id) + System.identityHashCode(graph);
     }
-    //——————
-
     /**
      * Returns a string representation of this node's ID.
      *
@@ -263,5 +223,4 @@ public class Node implements Comparable<Node> {
     public String toString() {
         return Integer.toString(id);
     }
-    //——————
 }
