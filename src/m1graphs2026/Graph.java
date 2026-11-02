@@ -38,8 +38,6 @@ public class Graph {
      */
     public Graph() {
     }
-    //——————
-
     /**
      * Constructs a directed graph described in the Successor Array (SA) formalism.
      *
@@ -86,8 +84,6 @@ public class Graph {
             }
         }
     }
-    //——————
-
     /**
      * Retrieves the node with the specified identifier from this graph.
      *
@@ -97,8 +93,6 @@ public class Graph {
     public Node getNode(int id) {
         return nodesById.get(id);
     }
-    //——————
-
     /**
      * Returns the number of nodes currently held by this graph.
      *
@@ -107,8 +101,6 @@ public class Graph {
     public int nbNodes() {
         return nodesById.size();
     }
-    //——————
-
     /**
      * Returns the total number of edges in this graph, counting parallel edges separately.
      *
@@ -121,8 +113,6 @@ public class Graph {
         }
         return count;
     }
-    //——————
-
     /**
      * Checks whether this graph contains a node with the specified identifier.
      *
@@ -132,8 +122,6 @@ public class Graph {
     public boolean usesNode(int id) {
         return nodesById.containsKey(id);
     }
-    //——————
-
     /**
      * Checks whether this graph contains a node whose identifier matches the specified node's identifier.
      *
@@ -143,8 +131,6 @@ public class Graph {
     public boolean usesNode(Node node) {
         return node != null && usesNode(node.getId());
     }
-    //——————
-
     /**
      * Checks whether the exact node instance belongs to this graph and is currently held by it.
      *
@@ -154,8 +140,6 @@ public class Graph {
     public boolean holdsNode(Node node) {
         return node != null && node.getGraph() == this && usesNode(node.getId());
     }
-    //——————
-
     /**
      * Indicates whether a node with the specified identifier is present in this graph.
      *
@@ -165,8 +149,6 @@ public class Graph {
     public boolean holdsNode(int id) {
         return getNode(id) != null;
     }
-    //——————
-
     /**
      * Adds an existing node instance to this graph if it belongs to this graph and has a unique identifier.
      *
@@ -181,8 +163,6 @@ public class Graph {
         adjEdList.put(node, new ArrayList<>());
         return true;
     }
-    //——————
-
     /**
      * Creates and adds a new node with the specified identifier to this graph.
      *
@@ -193,8 +173,6 @@ public class Graph {
         if (nodesById.containsKey(id)) return false;
         return addNode(new Node(id, this));
     }
-    //——————
-
     /**
      * Creates and adds a new node with the specified identifier and custom name to this graph.
      *
@@ -206,8 +184,6 @@ public class Graph {
         if (nodesById.containsKey(id)) return false;
         return addNode(new Node(id, name, this));
     }
-    //——————
-
     /**
      * Removes the specified node from the graph if it exists.
      * Consequently removes all edges incident to that node (both outgoing and incoming).
@@ -221,8 +197,6 @@ public class Graph {
         }
         return removeNode(n.getId());
     }
-    //——————
-
     /**
      * Removes the node with the specified ID from the graph if it exists.
      * Consequently removes all edges incident to that node (both outgoing and incoming).
@@ -240,8 +214,6 @@ public class Graph {
         }
         return true;
     }
-    //——————
-
     /**
      * Returns a new sorted list of all nodes belonging to this graph.
      *
@@ -252,8 +224,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns the largest ID used by a node in the graph.
      *
@@ -272,8 +242,6 @@ public class Graph {
         }
         return max;
     }
-    //——————
-
     /**
      * Returns the smallest ID used by a node in the graph.
      *
@@ -292,8 +260,6 @@ public class Graph {
         }
         return min;
     }
-    //——————
-
     /**
      * Returns a list without duplicates of the successors (or neighbors in the undirected case) of node {@code n}.
      *
@@ -307,8 +273,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns a list without duplicates of the successors of the node with ID {@code id}.
      *
@@ -318,8 +282,6 @@ public class Graph {
     public List<Node> getSuccessors(int id) {
         return getSuccessors(getNode(id));
     }
-    //——————
-
     /**
      * Returns a list with possible duplicates of the successors (or neighbors in the undirected case) of node {@code n}.
      *
@@ -335,8 +297,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns a list with possible duplicates of the successors of the node with ID {@code id}.
      *
@@ -346,8 +306,6 @@ public class Graph {
     public List<Node> getSuccessorsMulti(int id) {
         return getSuccessorsMulti(getNode(id));
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges leaving node {@code node}.
      *
@@ -360,8 +318,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges leaving the node with ID {@code id}.
      *
@@ -371,8 +327,6 @@ public class Graph {
     public List<Edge> getOutEdges(int id) {
         return getOutEdges(getNode(id));
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges entering node {@code node}, counting parallel edges.
      *
@@ -392,8 +346,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges entering the node with ID {@code id}, counting parallel edges.
      *
@@ -403,8 +355,6 @@ public class Graph {
     public List<Edge> getInEdges(int id) {
         return getInEdges(getNode(id));
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges incident to the specified node (union of out-edges and in-edges).
      * Self-loops are included exactly once.
@@ -423,8 +373,6 @@ public class Graph {
         Collections.sort(result);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges incident to the node with ID {@code id}.
      * Self-loops are included exactly once.
@@ -435,8 +383,6 @@ public class Graph {
     public List<Edge> getIncidentEdges(int id) {
         return getIncidentEdges(getNode(id));
     }
-    //——————
-
     /**
      * Returns a sorted list of all directed edges going from node {@code from} to node {@code to}.
      *
@@ -455,8 +401,6 @@ public class Graph {
         result.sort(null);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all directed edges going from node ID {@code u} to node ID {@code v}.
      *
@@ -467,8 +411,6 @@ public class Graph {
     public List<Edge> getEdges(int u, int v) {
         return getEdges(getNode(u), getNode(v));
     }
-    //——————
-
     /**
      * Returns whether a directed edge from node {@code u} to node {@code v} exists.
      *
@@ -479,8 +421,6 @@ public class Graph {
     public boolean adjacent(Node u, Node v) {
         return u != null && v != null && !getEdges(u, v).isEmpty();
     }
-    //——————
-
     /**
      * Returns whether a directed edge from node ID {@code fromId} to node ID {@code toId} exists.
      *
@@ -491,8 +431,6 @@ public class Graph {
     public boolean adjacent(int fromId, int toId) {
         return adjacent(getNode(fromId), getNode(toId));
     }
-    //——————
-
     /**
      * Computes the in-degree of the specified node in this graph.
      *
@@ -502,8 +440,6 @@ public class Graph {
     public int inDegree(Node node) {
         return getInEdges(node).size();
     }
-    //——————
-
     /**
      * Computes the in-degree of the node with ID {@code id} in this graph.
      *
@@ -513,8 +449,6 @@ public class Graph {
     public int inDegree(int id) {
         return inDegree(getNode(id));
     }
-    //——————
-
     /**
      * Computes the out-degree of the specified node in this graph.
      *
@@ -524,8 +458,6 @@ public class Graph {
     public int outDegree(Node node) {
         return getOutEdges(node).size();
     }
-    //——————
-
     /**
      * Computes the out-degree of the node with ID {@code id} in this graph.
      *
@@ -535,8 +467,6 @@ public class Graph {
     public int outDegree(int id) {
         return outDegree(getNode(id));
     }
-    //——————
-
     /**
      * Computes the total degree of the specified node in this graph.
      * For directed graphs, this is the sum of in-degree and out-degree.
@@ -547,8 +477,6 @@ public class Graph {
     public int degree(Node node) {
         return inDegree(node) + outDegree(node);
     }
-    //——————
-
     /**
      * Computes the total degree of the node with ID {@code id} in this graph.
      * For directed graphs, this is the sum of in-degree and out-degree.
@@ -559,8 +487,6 @@ public class Graph {
     public int degree(int id) {
         return degree(getNode(id));
     }
-    //——————
-
     private Node ensureNode(Node node) {
         if (node == null) {
             throw new IllegalArgumentException("Edge endpoint must not be null.");
@@ -576,15 +502,11 @@ public class Graph {
         adjEdList.put(node, new ArrayList<>());
         return node;
     }
-    //——————
-
     private void addEdgeInternal(Node from, Node to, Integer weight) {
         Node src = ensureNode(from);
         Node dst = ensureNode(to);
         adjEdList.get(src).add(new Edge(src, dst, weight));
     }
-    //——————
-
     /**
      * Adds an unweighted directed edge from node {@code from} to node {@code to}.
      * The nodes are registered in this graph first if they do not already belong to it.
@@ -596,8 +518,6 @@ public class Graph {
     public void addEdge(Node from, Node to) {
         addEdgeInternal(from, to, null);
     }
-    //——————
-
     /**
      * Adds an unweighted directed edge between node IDs, creating either endpoint in this graph if absent.
      *
@@ -607,8 +527,6 @@ public class Graph {
     public void addEdge(int fromId, int toId) {
         addEdgeInternal(getOrCreateNode(fromId), getOrCreateNode(toId), null);
     }
-    //——————
-
     /**
      * Adds a weighted directed edge from node {@code from} to node {@code to}.
      * The nodes are registered in this graph first if they do not already belong to it.
@@ -621,8 +539,6 @@ public class Graph {
     public void addEdge(Node from, Node to, int weight) {
         addEdgeInternal(from, to, weight);
     }
-    //——————
-
     /**
      * Adds a weighted directed edge between node IDs, creating either endpoint in this graph if absent.
      *
@@ -633,8 +549,6 @@ public class Graph {
     public void addEdge(int fromId, int toId, int weight) {
         addEdgeInternal(getOrCreateNode(fromId), getOrCreateNode(toId), weight);
     }
-    //——————
-
     /**
      * Adds the supplied edge to this graph, registering its endpoints if not already registered.
      *
@@ -650,8 +564,6 @@ public class Graph {
         }
         addEdgeInternal(edge.from(), edge.to(), edge.getWeight());
     }
-    //——————
-
     /**
      * Removes an edge going from node {@code from} to node {@code to}.
      * If multiple parallel edges exist, removes one of them.
@@ -672,8 +584,6 @@ public class Graph {
         }
         return false;
     }
-    //——————
-
     /**
      * Removes an edge going from node ID {@code fromId} to node ID {@code toId}.
      * If multiple parallel edges exist, removes one of them.
@@ -685,8 +595,6 @@ public class Graph {
     public boolean removeEdge(int fromId, int toId) {
         return removeEdge(getNode(fromId), getNode(toId));
     }
-    //——————
-
     /**
      * Removes an edge going from node {@code from} to node {@code to} with the specified weight.
      *
@@ -708,8 +616,6 @@ public class Graph {
         }
         return false;
     }
-    //——————
-
     /**
      * Removes an edge going from node ID {@code fromId} to node ID {@code toId} with the specified weight.
      *
@@ -721,8 +627,6 @@ public class Graph {
     public boolean removeEdge(int fromId, int toId, int weight) {
         return removeEdge(getNode(fromId), getNode(toId), weight);
     }
-    //——————
-
     /**
      * Removes the specified edge from this graph.
      *
@@ -735,8 +639,6 @@ public class Graph {
         if (outgoing == null) return false;
         return outgoing.remove(edge);
     }
-    //——————
-
     /**
      * Determines whether an edge exists in this graph from node {@code u} to node {@code v}.
      *
@@ -747,8 +649,6 @@ public class Graph {
     public boolean existsEdge(Node u, Node v) {
         return u != null && v != null && holdsNode(u) && holdsNode(v) && !getEdges(u, v).isEmpty();
     }
-    //——————
-
     /**
      * Determines whether an edge exists in this graph from node with ID {@code u} to node with ID {@code v}.
      *
@@ -759,8 +659,6 @@ public class Graph {
     public boolean existsEdge(int u, int v) {
         return existsEdge(getNode(u), getNode(v));
     }
-    //——————
-
     /**
      * Determines whether the specified edge exists in this graph.
      *
@@ -774,8 +672,6 @@ public class Graph {
         }
         return false;
     }
-    //——————
-
     /**
      * Determines whether an edge from node {@code u} to node {@code v} is a multi-edge
      * (i.e., there is at least one other edge from {@code u} to {@code v} in this graph).
@@ -787,8 +683,6 @@ public class Graph {
     public boolean isMultiEdge(Node u, Node v) {
         return u != null && v != null && holdsNode(u) && holdsNode(v) && getEdges(u, v).size() > 1;
     }
-    //——————
-
     /**
      * Determines whether an edge from node with ID {@code u} to node with ID {@code v} is a multi-edge.
      *
@@ -799,8 +693,6 @@ public class Graph {
     public boolean isMultiEdge(int u, int v) {
         return isMultiEdge(getNode(u), getNode(v));
     }
-    //——————
-
     /**
      * Determines whether the specified edge is a multi-edge in this graph
      * (i.e., at least one other edge shares its endpoints in this graph).
@@ -811,8 +703,6 @@ public class Graph {
     public boolean isMultiEdge(Edge edge) {
         return edge != null && isMultiEdge(edge.from(), edge.to());
     }
-    //——————
-
     /**
      * Indicates whether this graph currently contains no nodes.
      *
@@ -821,8 +711,6 @@ public class Graph {
     public boolean isEmpty() {
         return nodesById.isEmpty();
     }
-    //——————
-
     /**
      * Removes every node and edge from this graph, resetting it to an empty state.
      */
@@ -830,8 +718,6 @@ public class Graph {
         adjEdList.clear();
         nodesById.clear();
     }
-    //——————
-
     /**
      * Internal helper that returns the graph's node for an ID, creating it when missing.
      * Package-private so Edge's ID constructors can share this behavior.
@@ -847,8 +733,6 @@ public class Graph {
         adjEdList.put(created, new ArrayList<>());
         return created;
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges currently present in this graph.
      * Edges are ordered by source ID, target ID, and weight (unweighted first).
@@ -863,8 +747,6 @@ public class Graph {
         Collections.sort(result);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all edges currently present in this graph (alias for {@link #getAllEdges()}).
      *
@@ -873,8 +755,6 @@ public class Graph {
     public List<Edge> getEdges() {
         return getAllEdges();
     }
-    //——————
-
     /**
      * Returns a representation of this graph in the Successor Array (SA) formalism.
      * <p>
@@ -902,8 +782,6 @@ public class Graph {
         }
         return result;
     }
-    //——————
-
     /**
      * Returns an adjacency matrix representation of this graph.
      * <p>
@@ -939,8 +817,6 @@ public class Graph {
         }
         return matrix;
     }
-    //——————
-
     /**
      * Determines whether this graph is a multi-graph (i.e., contains at least one multi-edge).
      *
@@ -958,8 +834,6 @@ public class Graph {
         }
         return false;
     }
-    //——————
-
     /**
      * Determines whether this graph contains any self-loops (edges whose source and target are the same node).
      *
@@ -975,8 +849,6 @@ public class Graph {
         }
         return false;
     }
-    //——————
-
     /**
      * Determines whether this graph is a simple graph.
      * A graph is simple if and only if it has neither self-loops nor multi-edges.
@@ -986,8 +858,6 @@ public class Graph {
     public boolean isSimpleGraph() {
         return !hasSelfLoops() && !isMultiGraph();
     }
-    //——————
-
     /**
      * Computes the reverse graph (G^-1) in a new graph instance.
      * All edge directions are inverted while preserving node identifiers, names, and edge weights.
@@ -1008,8 +878,6 @@ public class Graph {
         }
         return reverse;
     }
-    //——————
-
     /**
      * Computes the transitive closure (G+) of this graph in a new graph instance using Warshall's algorithm.
      * In the transitive closure, a directed edge exists from node u to node v if and only if
@@ -1066,8 +934,6 @@ public class Graph {
 
         return closure;
     }
-    //——————
-
     /**
      * Transforms this graph into a simple graph by removing all self-loops and multi-edges.
      * Returns the simplified graph as a new graph instance.
@@ -1096,8 +962,6 @@ public class Graph {
         }
         return simple;
     }
-    //——————
-
     /**
      * Creates a deep structural copy of this graph into a new graph instance.
      * All nodes and edges are duplicated with their identifiers, names, and weights preserved.
@@ -1118,8 +982,6 @@ public class Graph {
         }
         return copy;
     }
-    //——————
-
     /**
      * Performs a Depth-First Search (DFS) traversal of the graph,
      * launched by default from the node with the lowest identifier.
@@ -1139,8 +1001,6 @@ public class Graph {
         }
         return result;
     }
-    //——————
-
     /**
      * Performs a Depth-First Search (DFS) traversal of the graph starting from node {@code u}.
      * Successor nodes are explored in increasing order of their identifiers for reproducible visitation.
@@ -1155,8 +1015,6 @@ public class Graph {
         dfsHelper(u, visited, result);
         return result;
     }
-    //——————
-
     private void dfsHelper(Node current, Set<Node> visited, List<Node> result) {
         visited.add(current);
         result.add(current);
@@ -1166,8 +1024,6 @@ public class Graph {
             }
         }
     }
-    //——————
-
     /**
      * Performs a Depth-First Search (DFS) traversal of the graph starting from the node with ID {@code id}.
      *
@@ -1177,8 +1033,6 @@ public class Graph {
     public List<Node> getDFS(int id) {
         return getDFS(getNode(id));
     }
-    //——————
-
     /**
      * Performs a Breadth-First Search (BFS) traversal of the graph,
      * launched by default from the node with the lowest identifier.
@@ -1198,8 +1052,6 @@ public class Graph {
         }
         return result;
     }
-    //——————
-
     /**
      * Performs a Breadth-First Search (BFS) traversal of the graph starting from node {@code u}.
      * Successor nodes are explored in increasing order of their identifiers for reproducible visitation.
@@ -1214,8 +1066,6 @@ public class Graph {
         bfsHelper(u, visited, result);
         return result;
     }
-    //——————
-
     private void bfsHelper(Node start, Set<Node> visited, List<Node> result) {
         Queue<Node> queue = new ArrayDeque<>();
         visited.add(start);
@@ -1231,8 +1081,6 @@ public class Graph {
             }
         }
     }
-    //——————
-
     /**
      * Performs a Breadth-First Search (BFS) traversal of the graph starting from the node with ID {@code id}.
      *
@@ -1242,8 +1090,6 @@ public class Graph {
     public List<Node> getBFS(int id) {
         return getBFS(getNode(id));
     }
-    //——————
-
     /**
      * Performs an enriched Depth-First Search (DFS) traversal of the graph with color visit information,
      * launched by default from the node with the lowest identifier.
@@ -1264,8 +1110,6 @@ public class Graph {
         }
         return getDFSWithVisitInfo(smallestNodeId(), nodeVisit, edgeVisit);
     }
-    //——————
-
     /**
      * Performs an enriched Depth-First Search (DFS) traversal of the graph starting from node {@code u},
      * collecting node visit information and edge classifications along the traversal.
@@ -1295,8 +1139,6 @@ public class Graph {
         dfsVisitWithInfoHelper(u, nodeVisit, edgeVisit, result);
         return result;
     }
-    //——————
-
     private void dfsVisitWithInfoHelper(Node current, Map<Node, NodeVisitInfo> nodeVisit,
                                         Map<Edge, EdgeVisitType> edgeVisit, List<Node> result) {
         dfsTime++;
@@ -1328,8 +1170,6 @@ public class Graph {
         currentInfo.setColor(NodeColor.BLACK);
         currentInfo.setFinished(dfsTime);
     }
-    //——————
-
     /**
      * Performs an enriched Depth-First Search (DFS) traversal of the graph starting from the node with ID {@code id},
      * collecting node visit information and edge classifications along the traversal.
@@ -1343,8 +1183,6 @@ public class Graph {
     public List<Node> getDFSWithVisitInfo(int id, Map<Node, NodeVisitInfo> nodeVisit, Map<Edge, EdgeVisitType> edgeVisit) {
         return getDFSWithVisitInfo(getNode(id), nodeVisit, edgeVisit);
     }
-    //——————
-
     /**
      * Returns an elementary DOT description of this directed graph.
      *
@@ -1375,8 +1213,6 @@ public class Graph {
         }
         return output.append("}\n").toString();
     }
-    //——————
-
     /**
      * Exports this graph as a file in the DOT syntax using the specified file extension.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -1406,8 +1242,6 @@ public class Graph {
             throw new RuntimeException("Failed to write DOT file to " + fullPath, e);
         }
     }
-    //——————
-
     /**
      * Exports this graph as a file in the DOT syntax using the default extension {@code ".gv"}.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -1419,8 +1253,6 @@ public class Graph {
     public void toDotFile(String fileName) {
         toDotFile(fileName, ".gv");
     }
-    //——————
-
     /**
      * Imports a graph described in the simplified DOT format from a file using the specified extension.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -1467,8 +1299,6 @@ public class Graph {
 
         return parseDotLines(lines);
     }
-    //——————
-
     /**
      * Imports a graph described in the simplified DOT format from a file using default extension {@code ".gv"}.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -1481,8 +1311,6 @@ public class Graph {
     public static Graph fromDotFile(String fileName) {
         return fromDotFile(fileName, ".gv");
     }
-    //——————
-
     private static Graph parseDotLines(List<String> lines) {
         boolean isDirected = true;
         boolean graphTypeDetermined = false;
@@ -1620,8 +1448,6 @@ public class Graph {
         }
         return graph;
     }
-    //——————
-
     /**
      * Generates a random directed graph according to the Erdős–Rényi G(n, p) model.
      * Nodes with identifiers 1 to {@code nbNodes} are created, and each directed pair (u, v)
@@ -1653,8 +1479,6 @@ public class Graph {
         }
         return g;
     }
-    //——————
-
     /**
      * Generates a random Directed Acyclic Graph (DAG) with {@code nbNodes} nodes.
      * Edges are only directed from nodes with smaller IDs to nodes with larger IDs,
@@ -1686,8 +1510,6 @@ public class Graph {
         }
         return g;
     }
-    //——————
-
     /**
      * Generates a random strongly connected directed graph with {@code nbNodes} nodes.
      * A random spanning directed cycle is created to ensure connectivity, followed by
@@ -1732,5 +1554,4 @@ public class Graph {
         }
         return g;
     }
-    //——————
 }

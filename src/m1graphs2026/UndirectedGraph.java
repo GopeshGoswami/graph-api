@@ -23,8 +23,6 @@ public class UndirectedGraph extends Graph {
     public UndirectedGraph() {
         super();
     }
-    //——————
-
     /**
      * Constructs an undirected graph described in the Successor Array (SA) formalism.
      *
@@ -79,8 +77,6 @@ public class UndirectedGraph extends Graph {
             }
         }
     }
-    //——————
-
     /**
      * Adds an unweighted undirected edge between {@code from} and {@code to}.
      * The edge is bidirectional and incident to both endpoints.
@@ -95,8 +91,6 @@ public class UndirectedGraph extends Graph {
             super.addEdge(to, from);
         }
     }
-    //——————
-
     /**
      * Adds an unweighted undirected edge between node IDs {@code fromId} and {@code toId}.
      *
@@ -110,8 +104,6 @@ public class UndirectedGraph extends Graph {
             super.addEdge(toId, fromId);
         }
     }
-    //——————
-
     /**
      * Adds a weighted undirected edge between {@code from} and {@code to}.
      *
@@ -126,8 +118,6 @@ public class UndirectedGraph extends Graph {
             super.addEdge(to, from, weight);
         }
     }
-    //——————
-
     /**
      * Adds a weighted undirected edge between node IDs {@code fromId} and {@code toId}.
      *
@@ -142,8 +132,6 @@ public class UndirectedGraph extends Graph {
             super.addEdge(toId, fromId, weight);
         }
     }
-    //——————
-
     /**
      * Adds the supplied edge as an undirected edge, ensuring symmetry.
      *
@@ -156,8 +144,6 @@ public class UndirectedGraph extends Graph {
             super.addEdge(edge.getSymmetric());
         }
     }
-    //——————
-
     /**
      * Removes an undirected edge between {@code from} and {@code to}.
      *
@@ -173,8 +159,6 @@ public class UndirectedGraph extends Graph {
         }
         return removed;
     }
-    //——————
-
     /**
      * Removes an undirected edge between node IDs {@code fromId} and {@code toId}.
      *
@@ -190,8 +174,6 @@ public class UndirectedGraph extends Graph {
         }
         return removed;
     }
-    //——————
-
     /**
      * Removes a weighted undirected edge between {@code from} and {@code to}.
      *
@@ -208,8 +190,6 @@ public class UndirectedGraph extends Graph {
         }
         return removed;
     }
-    //——————
-
     /**
      * Removes a weighted undirected edge between node IDs {@code fromId} and {@code toId}.
      *
@@ -226,8 +206,6 @@ public class UndirectedGraph extends Graph {
         }
         return removed;
     }
-    //——————
-
     /**
      * Removes the specified edge symmetrically from this undirected graph.
      *
@@ -242,8 +220,6 @@ public class UndirectedGraph extends Graph {
         }
         return removed;
     }
-    //——————
-
     /**
      * Returns the total number of distinct undirected edges in this graph.
      *
@@ -253,8 +229,6 @@ public class UndirectedGraph extends Graph {
     public int nbEdges() {
         return getAllEdges().size();
     }
-    //——————
-
     /**
      * Returns a sorted list of all unique undirected edges in this graph,
      * normalized such that {@code from.getId() <= to.getId()}.
@@ -274,8 +248,6 @@ public class UndirectedGraph extends Graph {
         Collections.sort(result);
         return result;
     }
-    //——————
-
     /**
      * Returns a sorted list of all unique undirected edges in this graph (alias for {@link #getAllEdges()}).
      *
@@ -285,8 +257,6 @@ public class UndirectedGraph extends Graph {
     public List<Edge> getEdges() {
         return getAllEdges();
     }
-    //——————
-
     /**
      * Returns all edges incident to {@code node} (for an undirected graph, in-edges are incident edges).
      *
@@ -297,8 +267,6 @@ public class UndirectedGraph extends Graph {
     public List<Edge> getInEdges(Node node) {
         return getOutEdges(node);
     }
-    //——————
-
     /**
      * Returns all edges incident to the node with ID {@code id}.
      *
@@ -309,8 +277,6 @@ public class UndirectedGraph extends Graph {
     public List<Edge> getInEdges(int id) {
         return getOutEdges(id);
     }
-    //——————
-
     /**
      * Returns all edges incident to {@code node}.
      *
@@ -321,8 +287,6 @@ public class UndirectedGraph extends Graph {
     public List<Edge> getIncidentEdges(Node node) {
         return getOutEdges(node);
     }
-    //——————
-
     /**
      * Returns all edges incident to the node with ID {@code id}.
      *
@@ -333,8 +297,6 @@ public class UndirectedGraph extends Graph {
     public List<Edge> getIncidentEdges(int id) {
         return getOutEdges(id);
     }
-    //——————
-
     /**
      * Computes the in-degree of {@code node} in this undirected graph, which equals its degree.
      *
@@ -345,8 +307,6 @@ public class UndirectedGraph extends Graph {
     public int inDegree(Node node) {
         return degree(node);
     }
-    //——————
-
     /**
      * Computes the in-degree of the node with ID {@code id}.
      *
@@ -357,8 +317,6 @@ public class UndirectedGraph extends Graph {
     public int inDegree(int id) {
         return degree(id);
     }
-    //——————
-
     /**
      * Computes the out-degree of {@code node} in this undirected graph, which equals its degree.
      *
@@ -369,8 +327,6 @@ public class UndirectedGraph extends Graph {
     public int outDegree(Node node) {
         return degree(node);
     }
-    //——————
-
     /**
      * Computes the out-degree of the node with ID {@code id}.
      *
@@ -381,8 +337,6 @@ public class UndirectedGraph extends Graph {
     public int outDegree(int id) {
         return degree(id);
     }
-    //——————
-
     /**
      * Computes the degree of {@code node} in this undirected graph (number of incident edges).
      *
@@ -398,8 +352,6 @@ public class UndirectedGraph extends Graph {
         }
         return count;
     }
-    //——————
-
     /**
      * Computes the degree of the node with ID {@code id} in this undirected graph.
      *
@@ -410,8 +362,6 @@ public class UndirectedGraph extends Graph {
     public int degree(int id) {
         return degree(getNode(id));
     }
-    //——————
-
     /**
      * Reversing an undirected graph produces an identical undirected graph.
      *
@@ -421,8 +371,6 @@ public class UndirectedGraph extends Graph {
     public UndirectedGraph getReverse() {
         return copy();
     }
-    //——————
-
     /**
      * Creates a deep copy of this undirected graph.
      *
@@ -443,8 +391,6 @@ public class UndirectedGraph extends Graph {
         }
         return copy;
     }
-    //——————
-
     /**
      * Transforms this undirected graph into a simple undirected graph by removing self-loops and multi-edges.
      *
@@ -473,8 +419,6 @@ public class UndirectedGraph extends Graph {
         }
         return simple;
     }
-    //——————
-
     /**
      * Returns a representation of this undirected graph as a Successor Array (SA)
      * using the upper-triangular representation (only edges {@code u <= v}).
@@ -501,8 +445,6 @@ public class UndirectedGraph extends Graph {
         }
         return result;
     }
-    //——————
-
     /**
      * Computes the transitive closure of this undirected graph in a new {@link UndirectedGraph} instance.
      * Nodes in the same connected component are joined by an undirected edge without self-loops.
@@ -559,8 +501,6 @@ public class UndirectedGraph extends Graph {
 
         return closure;
     }
-    //——————
-
     /**
      * Returns an elementary DOT description of this undirected graph.
      *
@@ -594,8 +534,6 @@ public class UndirectedGraph extends Graph {
         }
         return output.append("}\n").toString();
     }
-    //——————
-
     /**
      * Imports an undirected graph from a DOT file using the specified extension.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -624,8 +562,6 @@ public class UndirectedGraph extends Graph {
         }
         return ug;
     }
-    //——————
-
     /**
      * Imports an undirected graph from a DOT file using default extension {@code ".gv"}.
      * The argument {@code fileName} specifies the file path with no extension.
@@ -638,8 +574,6 @@ public class UndirectedGraph extends Graph {
     public static UndirectedGraph fromDotFile(String fileName) {
         return fromDotFile(fileName, ".gv");
     }
-    //——————
-
     /**
      * Generates a random undirected graph according to the Erdős–Rényi model.
      * Nodes with identifiers 1 to {@code nbNodes} are created, and each pair u &lt; v
@@ -671,8 +605,6 @@ public class UndirectedGraph extends Graph {
         }
         return g;
     }
-    //——————
-
     /**
      * Generates a random connected undirected graph with {@code nbNodes} nodes.
      * First creates a random spanning tree to ensure connectedness, followed by
@@ -720,5 +652,4 @@ public class UndirectedGraph extends Graph {
         }
         return g;
     }
-    //——————
 }

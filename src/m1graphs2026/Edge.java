@@ -28,8 +28,6 @@ public class Edge implements Comparable<Edge> {
     public Edge(Node from, Node to) {
         this(from, to, null);
     }
-    //——————
-
     /**
      * Constructs a directed edge between two nodes with an optional integer weight.
      *
@@ -49,8 +47,6 @@ public class Edge implements Comparable<Edge> {
         this.to = to;
         this.weight = weight;
     }
-    //——————
-
     /**
      * Constructs an unweighted directed edge using node identifiers.
      *
@@ -62,8 +58,6 @@ public class Edge implements Comparable<Edge> {
     public Edge(int fromId, int toId, Graph graph) {
         this(requireNodeInGraph(graph, fromId), requireNodeInGraph(graph, toId), null);
     }
-    //——————
-
     /**
      * Constructs a weighted directed edge using node identifiers and an integer weight.
      *
@@ -76,16 +70,12 @@ public class Edge implements Comparable<Edge> {
     public Edge(int fromId, int toId, Graph graph, Integer weight) {
         this(requireNodeInGraph(graph, fromId), requireNodeInGraph(graph, toId), weight);
     }
-    //——————
-
     private static Node requireNodeInGraph(Graph graph, int id) {
         if (graph == null) {
             throw new IllegalArgumentException("An edge must have a graph holder.");
         }
         return graph.getOrCreateNode(id);
     }
-    //——————
-
     /**
      * Returns the source node of this directed edge.
      *
@@ -94,8 +84,6 @@ public class Edge implements Comparable<Edge> {
     public Node from() {
         return from;
     }
-    //——————
-
     /**
      * Returns the target node of this directed edge.
      *
@@ -104,8 +92,6 @@ public class Edge implements Comparable<Edge> {
     public Node to() {
         return to;
     }
-    //——————
-
     /**
      * Returns the symmetric of this edge as a new {@link Edge} instance with endpoints reversed
      * and the same weight.
@@ -115,8 +101,6 @@ public class Edge implements Comparable<Edge> {
     public Edge getSymmetric() {
         return new Edge(to, from, weight);
     }
-    //——————
-
     /**
      * Indicates whether this edge is a self-loop (source and target nodes are the same).
      *
@@ -125,8 +109,6 @@ public class Edge implements Comparable<Edge> {
     public boolean isSelfLoop() {
         return from.equals(to);
     }
-    //——————
-
     /**
      * Indicates whether this edge is a multi-edge, i.e., there is at least one other edge
      * with the same endpoints in the graph holder.
@@ -136,8 +118,6 @@ public class Edge implements Comparable<Edge> {
     public boolean isMultiEdge() {
         return from.getGraph().isMultiEdge(this);
     }
-    //——————
-
     /**
      * Indicates whether this edge has an assigned integer weight.
      *
@@ -146,8 +126,6 @@ public class Edge implements Comparable<Edge> {
     public boolean isWeighted() {
         return weight != null;
     }
-    //——————
-
     /**
      * Gets the weight of this edge.
      *
@@ -156,8 +134,6 @@ public class Edge implements Comparable<Edge> {
     public Integer getWeight() {
         return weight;
     }
-    //——————
-
     /**
      * Compares this edge with another edge for order.
      * Edges are ordered first by source node ID, then by target node ID, then by increasing weight
@@ -179,8 +155,6 @@ public class Edge implements Comparable<Edge> {
         if (other.weight == null) return 1;
         return Integer.compare(weight, other.weight);
     }
-    //——————
-
     /**
      * Indicates whether some other object is equal to this edge.
      * Two edges are equal if they have equal source nodes, equal target nodes, and equal weights.
@@ -195,8 +169,6 @@ public class Edge implements Comparable<Edge> {
         return from.equals(other.from) && to.equals(other.to)
                 && Objects.equals(weight, other.weight);
     }
-    //——————
-
     /**
      * Computes a hash code value for this edge, consistent with {@link #equals(Object)}.
      *
@@ -206,8 +178,6 @@ public class Edge implements Comparable<Edge> {
     public int hashCode() {
         return Objects.hash(from, to, weight);
     }
-    //——————
-
     /**
      * Returns a string representation of this edge.
      *
@@ -219,5 +189,4 @@ public class Edge implements Comparable<Edge> {
                 ? from.getId() + "->" + to.getId()
                 : from.getId() + "->" + to.getId() + "(" + weight + ")";
     }
-    //——————
 }

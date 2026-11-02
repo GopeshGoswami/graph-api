@@ -21,8 +21,6 @@ public class NodeVisitInfo {
     public NodeVisitInfo() {
         this(NodeColor.WHITE, null, null, null);
     }
-    //——————
-
     /**
      * Constructs a {@code NodeVisitInfo} with the specified color and null predecessor and timestamps.
      *
@@ -31,8 +29,6 @@ public class NodeVisitInfo {
     public NodeVisitInfo(NodeColor color) {
         this(color, null, null, null);
     }
-    //——————
-
     /**
      * Constructs a {@code NodeVisitInfo} with full visit details.
      *
@@ -47,8 +43,6 @@ public class NodeVisitInfo {
         this.discovery = discovery;
         this.finished = finished;
     }
-    //——————
-
     /**
      * Gets the current visit color of the node.
      *
@@ -57,8 +51,6 @@ public class NodeVisitInfo {
     public NodeColor getColor() {
         return color;
     }
-    //——————
-
     /**
      * Sets the visit color of the node.
      *
@@ -67,8 +59,6 @@ public class NodeVisitInfo {
     public void setColor(NodeColor color) {
         this.color = color;
     }
-    //——————
-
     /**
      * Gets the predecessor node in the traversal tree.
      *
@@ -77,8 +67,6 @@ public class NodeVisitInfo {
     public Node getPredecessor() {
         return predecessor;
     }
-    //——————
-
     /**
      * Sets the predecessor node in the traversal tree.
      *
@@ -87,8 +75,6 @@ public class NodeVisitInfo {
     public void setPredecessor(Node predecessor) {
         this.predecessor = predecessor;
     }
-    //——————
-
     /**
      * Gets the discovery timestamp of the node.
      *
@@ -97,8 +83,6 @@ public class NodeVisitInfo {
     public Integer getDiscovery() {
         return discovery;
     }
-    //——————
-
     /**
      * Sets the discovery timestamp of the node.
      *
@@ -107,8 +91,6 @@ public class NodeVisitInfo {
     public void setDiscovery(Integer discovery) {
         this.discovery = discovery;
     }
-    //——————
-
     /**
      * Gets the discovery timestamp of the node (alias for {@link #getDiscovery()}).
      *
@@ -117,8 +99,6 @@ public class NodeVisitInfo {
     public Integer getDiscoveryTime() {
         return getDiscovery();
     }
-    //——————
-
     /**
      * Sets the discovery timestamp of the node (alias for {@link #setDiscovery(Integer)}).
      *
@@ -127,8 +107,6 @@ public class NodeVisitInfo {
     public void setDiscoveryTime(Integer discovery) {
         setDiscovery(discovery);
     }
-    //——————
-
     /**
      * Gets the finish timestamp of the node.
      *
@@ -137,8 +115,6 @@ public class NodeVisitInfo {
     public Integer getFinished() {
         return finished;
     }
-    //——————
-
     /**
      * Sets the finish timestamp of the node.
      *
@@ -147,8 +123,6 @@ public class NodeVisitInfo {
     public void setFinished(Integer finished) {
         this.finished = finished;
     }
-    //——————
-
     /**
      * Gets the finish timestamp of the node (alias for {@link #getFinished()}).
      *
@@ -157,8 +131,6 @@ public class NodeVisitInfo {
     public Integer getFinishedTime() {
         return getFinished();
     }
-    //——————
-
     /**
      * Sets the finish timestamp of the node (alias for {@link #setFinished(Integer)}).
      *
@@ -167,8 +139,6 @@ public class NodeVisitInfo {
     public void setFinishedTime(Integer finished) {
         setFinished(finished);
     }
-    //——————
-
     /**
      * Gets the finish timestamp of the node (alias for {@link #getFinished()}).
      *
@@ -177,8 +147,6 @@ public class NodeVisitInfo {
     public Integer getFinishTime() {
         return getFinished();
     }
-    //——————
-
     /**
      * Sets the finish timestamp of the node (alias for {@link #setFinished(Integer)}).
      *
@@ -187,8 +155,6 @@ public class NodeVisitInfo {
     public void setFinishTime(Integer finished) {
         setFinished(finished);
     }
-    //——————
-
     /**
      * Indicates whether another object is equal to this visit information.
      *
@@ -204,8 +170,6 @@ public class NodeVisitInfo {
                 && Objects.equals(discovery, other.discovery)
                 && Objects.equals(finished, other.finished);
     }
-    //——————
-
     /**
      * Returns a hash code value for this visit information.
      *
@@ -215,8 +179,6 @@ public class NodeVisitInfo {
     public int hashCode() {
         return Objects.hash(color, predecessor, discovery, finished);
     }
-    //——————
-
     /**
      * Returns a string representation of this visit information.
      *
@@ -231,5 +193,4 @@ public class NodeVisitInfo {
                 + ", finished=" + finished
                 + '}';
     }
-    //——————
 }
