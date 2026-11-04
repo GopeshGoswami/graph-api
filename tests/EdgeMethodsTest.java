@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Comprehensive verification of all Edge constructors, methods 14 through 20,
- * and Comparable/equals contracts specified in PDF Sections 3.3 and 5.2.
- */
 public final class EdgeMethodsTest {
 
     private static int testsRun = 0;
