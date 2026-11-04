@@ -4,9 +4,7 @@ import m1graphs2026.Graph;
 import m1graphs2026.Node;
 import m1graphs2026.UndirectedGraph;
 
-/**
- * Unit tests for Random Graph generation (Section 8) and Node(Graph) auto-id constructor.
- */
+
 public final class RandomGraphTest {
 
     private static int testsRun = 0;

@@ -41,7 +41,6 @@ public class TestGraphsPW2 {
 			System.out.println(""+n+": "+edges);
 		}
 
-		/////////////////////////////////////////////////////
 
 		System.out.println("\n>>>>>>>> creating isolated node 12");
 		if (!g.addNode(12))
@@ -117,7 +116,6 @@ public class TestGraphsPW2 {
 		boolean same = true;
 		for (Node u: nodes) {
 			List<Node> succs = g.getSuccessors(u), succsMulti = g.getSuccessorsMulti(u);
-			// sort the lists so that nodes always appear in the same order
 			Collections.sort(succs);
 			Collections.sort(succsMulti);
 			same = same && succs.equals(succsMulti); 
@@ -218,7 +216,6 @@ public class TestGraphsPW2 {
 		System.out.println("Comparing single and multi successors per node for 'multiGraph.gv'");
 		for (Node u: mg.getAllNodes()) {
 			List<Node> succs = mg.getSuccessors(u), succsMulti = mg.getSuccessorsMulti(u);
-			// sort the lists so that nodes always appear in the same order
 			Collections.sort(succs);
 			Collections.sort(succsMulti);
 			System.out.println(""+u+" single successors: "+succs);
@@ -357,7 +354,6 @@ public class TestGraphsPW2 {
 		System.out.println("Comparing single and multi successors per node for guDisc");
 		for (Node u: guDisc.getAllNodes()) {
 			List<Node> succs = guDisc.getSuccessors(u), succsMulti = guDisc.getSuccessorsMulti(u);
-			// sort the lists so that nodes always appear in the same order
 			Collections.sort(succs);
 			Collections.sort(succsMulti);
 			System.out.println(""+u+" single successors: "+succs);
@@ -399,7 +395,6 @@ public class TestGraphsPW2 {
 		System.out.println("\nComparing single and multi successors per node for uwmg");
 		for (Node u: uwmg.getAllNodes()) {
 			List<Node> succs = uwmg.getSuccessors(u), succsMulti = uwmg.getSuccessorsMulti(u);
-			// sort the lists so that nodes always appear in the same order
 			Collections.sort(succs);
 			Collections.sort(succsMulti);
 			System.out.println(""+u+" single successors: "+succs);

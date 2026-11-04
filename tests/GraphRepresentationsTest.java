@@ -3,9 +3,7 @@ package tests;
 import java.util.Arrays;
 import m1graphs2026.Graph;
 
-/**
- * Unit tests for Graph representations: toSuccessorArray (Req 46) and toAdjMatrix (Req 47).
- */
+
 public final class GraphRepresentationsTest {
 
     private static int testsRun = 0;
@@ -252,7 +250,7 @@ public final class GraphRepresentationsTest {
     public static void testStructuralTransformations() {
         System.out.println("\nTesting structural transformations (Reqs 48, 49, 53, 54):");
 
-        // --- Req 54: copy() ---
+        // Req 54: copy()
         Graph original = new Graph();
         original.addNode(10, "Ten");
         original.addNode(20, "Twenty");

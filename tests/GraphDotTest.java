@@ -6,9 +6,7 @@ import java.nio.file.Path;
 import m1graphs2026.Graph;
 import m1graphs2026.UndirectedGraph;
 
-/**
- * Unit tests for DOT Import and Export operations (Milestone 8, Reqs 63, 64, 65).
- */
+
 public final class GraphDotTest {
 
     private static int testsRun = 0;

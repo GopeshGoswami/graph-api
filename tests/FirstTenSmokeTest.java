@@ -3,7 +3,6 @@ package tests;
 import m1graphs2026.Graph;
 import m1graphs2026.Node;
 
-/** Small command-line checks for the first ten Node methods. */
 public final class FirstTenSmokeTest {
     private FirstTenSmokeTest() { }
 

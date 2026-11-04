@@ -12,9 +12,6 @@ import m1graphs2026.NodeColor;
 import m1graphs2026.NodeVisitInfo;
 import m1graphs2026.UndirectedGraph;
 
-/**
- * Unit tests for Graph Traversals (Milestone 7): getDFS (Reqs 55, 56) and getBFS (Reqs 57, 58).
- */
 public final class GraphTraversalTest {
 
     private static int testsRun = 0;

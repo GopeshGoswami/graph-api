@@ -5,9 +5,7 @@ import m1graphs2026.Edge;
 import m1graphs2026.Node;
 import m1graphs2026.UndirectedGraph;
 
-/**
- * Unit tests for UndirectedGraph (Milestone 6).
- */
+
 public final class UndirectedGraphTest {
 
     private static int testsRun = 0;

@@ -6,9 +6,7 @@ import m1graphs2026.Node;
 
 import java.util.List;
 
-/**
- * Comprehensive verification of all 13 Node API methods specified in PDF Section 5.1.
- */
+
 public final class NodeMethodsTest {
 
     private static int testsRun = 0;
